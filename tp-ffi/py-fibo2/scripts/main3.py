@@ -7,6 +7,7 @@ from matplotlib.backends.backend_gtk3agg import (
 from matplotlib.figure import Figure
 import numpy as np
 
+import myfibo as my
 
 class Gui(Gtk.Window):
     
@@ -14,7 +15,7 @@ class Gui(Gtk.Window):
         super().__init__(title="Fibo")
 
         # init some data
-        initial_n = 11
+        initial_n = 20
         max_n = 30
 
         # main vertical box : canvas + hbox (spin1, button1)
@@ -53,7 +54,12 @@ class Gui(Gtk.Window):
 
     def update_canvas(self, n):
         self.ax.clear()
-        # TODO plot fibo_iterative
+        xs = np.arange(0, n, 1)
+        ys = np.vectorize(my.fibo_iterative)(xs)
+        self.ax.plot(xs, ys)
+        self.ax.set(xlabel='i', ylabel='fibo_iterative(i)')
+        self.ax.grid()
+
         self.canvas.draw()
 
 
