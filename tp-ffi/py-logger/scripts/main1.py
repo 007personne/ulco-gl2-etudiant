@@ -1,11 +1,16 @@
+import Logger
+
 
 if __name__ == '__main__':
 
-    print('TODO')
+    log = Logger.Logger()
+    log.add_item(Logger.Level.Info, "une info")
+    log.add_item(Logger.Level.Error, "une erreur")
+    log.add_item(Logger.Level.Info, "une autre info")
+    log.add_item(Logger.Level.Warning, "un avertissement")
 
-    # TODO create a logger and add some items
 
-    # TODO report_by_added
+    print(log.report_by_Added())
 
     # TODO report_by_level
 
