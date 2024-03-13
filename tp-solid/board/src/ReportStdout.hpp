@@ -10,7 +10,6 @@ class ReportStdout {
 
 
 public:
-    ReportStdout() {}
 
     void reportStdout(Board& items) {
         for (const auto & item : items.getItems())
