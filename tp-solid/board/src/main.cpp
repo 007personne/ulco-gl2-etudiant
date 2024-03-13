@@ -29,6 +29,7 @@ int main() {
 
     testBoard(b1, r1, r2);
     testNumBoard(b2, r3, r2);
+    testBoard(b2, r1, r2);
 
     return 0;
 }
