@@ -1,12 +1,10 @@
 #pragma once
 
 #include "Board.hpp"
-#include "Itemable.hpp"
+#include "Reportable.hpp"
 
-#include <fstream>
-#include <iostream>
+class ReportFile: public Reportable {
 
-class ReportFile {
 private:
     std::ofstream _ofs;
 
@@ -14,10 +12,10 @@ public:
     
     ReportFile(const std::string & filename) : _ofs(filename) {}
 
-
-    void reportFile(Board& items) {
+    void report(Board& items) override {
         for (const auto item : items.getItems())
             _ofs << item << std::endl;
-        _ofs << std::endl;
+        _ofs << std::endl;    
     }
+
 };
