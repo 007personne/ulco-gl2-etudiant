@@ -5,6 +5,8 @@
 class Board {
 private:
     int _nextId;
+
+public:
     std::list<Task> _todo;
     std::list<Task> _done;
 
