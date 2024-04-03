@@ -1,6 +1,5 @@
-#include <todolist-cpp/Task.hpp>
 #include <todolist-cpp/View.hpp>
-#include <todolist-cpp/Board.hpp>
+
 
 #include <iostream>
 
@@ -14,6 +13,8 @@ int main() {
     b.addTodo("Task N°2");
 
     
+    //std::cout << printBoard(b);
+
 
     return 0;
 }

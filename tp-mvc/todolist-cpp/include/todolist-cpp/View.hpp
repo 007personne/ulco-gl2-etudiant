@@ -1,6 +1,9 @@
 #pragma once
 
-#include <todolist-cpp/Task.hpp>
+#include <todolist-cpp/Board.hpp>
+
 #include <string>
 
-std::string showTask(const Task& t);
+std::string showTask(const Task&);
+
+std::string printBoard(Board&);

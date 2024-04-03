@@ -5,8 +5,8 @@ include_directories( include )
 # library
 add_library( todolist-cpp-lib
     src/todolist-cpp/Board.cpp
-    src/todolist-cpp/View.cpp
-    src/todolist-cpp/Task.cpp )
+    src/todolist-cpp/Task.cpp
+    src/todolist-cpp/View.cpp )
 
 # executable
 add_executable( todolist-cpp-app
