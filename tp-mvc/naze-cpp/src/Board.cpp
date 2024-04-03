@@ -36,8 +36,35 @@ Cell Board::operator()(int i, int j) const {
     return _board[i][j];
 }
 
+
 void Board::tryGoLeft() {
-    _i++;
-    _j++;
-    // TODO
+    if(_i > 0){
+        if(_board[_i--][_j] != Cell::Wall){
+            _i--;
+        }
+    }
+}
+
+void Board::tryGoRight() {
+    if(_i < 9) {
+        if(_board[_i++][_j] != Cell::Wall){
+            _i++;
+        }  
+    }
+}
+
+void Board::tryGoUp() {
+    if(_j > 0){
+        if(_board[_i][_j--] != Cell::Wall){
+            _j--;
+        }   
+    }
+}
+
+void Board::tryGoDown() {
+    if(_j < 9) {
+        if(_board[_i][_j++] != Cell::Wall){
+            _j++;
+        }  
+    }
 }
