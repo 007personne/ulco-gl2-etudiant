@@ -26,17 +26,15 @@ class Net {
         }
 
         void map(const WebSocketChannelPtr channel, std::string msg) {
-            std::string nom = "";
-            for (const auto & c : _connections){
-                if(channel == c.first){
-                    nom = c.second;
-                }
-            }
-            if(nom != ""){
+            if(!isPending(channel)){
+                std::string nom = findName(&channel);
+ 
                 for (const auto & c : _connections){
 
-                }
+                }   
+                
             }
+            
         }
 
         // pour gérer les noms de client :
