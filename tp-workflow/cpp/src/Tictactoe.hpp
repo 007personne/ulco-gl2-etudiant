@@ -12,7 +12,8 @@ enum class Cell { Vide, Rouge, Vert };
 class Jeu {
     private:
         std::array<std::array<Cell, 3>, 3> _plateau;
-        // TODO
+        bool _tourRouge;
+        Status _stat;
 
     public:
         // Constructeur à utiliser.
@@ -35,6 +36,9 @@ class Jeu {
 
         // Réinitialise le jeu.
         void raz();
+
+    private:
+        bool vic();
 };
 
 std::ostream & operator<<(std::ostream & os, const Jeu & jeu);
