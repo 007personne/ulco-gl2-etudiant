@@ -39,6 +39,7 @@ class Jeu {
 
     private:
         bool vic();
+        bool egal();
 };
 
 std::ostream & operator<<(std::ostream & os, const Jeu & jeu);

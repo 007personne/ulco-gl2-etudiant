@@ -44,6 +44,21 @@ bool Jeu::vic() {
     return false;
 }
 
+bool Jeu::egal() {
+    if (_plateau[0][0] == Cell::Vide) {return false;}
+    if (_plateau[0][1] == Cell::Vide) {return false;}
+    if (_plateau[0][2] == Cell::Vide) {return false;}
+
+    if (_plateau[1][0] == Cell::Vide) {return false;}
+    if (_plateau[1][1] == Cell::Vide) {return false;}
+    if (_plateau[1][2] == Cell::Vide) {return false;}
+
+    if (_plateau[2][0] == Cell::Vide) {return false;}
+    if (_plateau[2][1] == Cell::Vide) {return false;}
+    if (_plateau[2][2] == Cell::Vide) {return false;}
+    return true;
+}
+
 bool Jeu::jouer(int i, int j) {
 
     if (0 <= i <= 2) {
@@ -58,14 +73,14 @@ bool Jeu::jouer(int i, int j) {
                     }
                     
                     if (vic()) {
-                        std::cout << "test";
                         if (_tourRouge) {
                             _stat = Status::RougeGagne;
                         } else {
                             _stat = Status::VertGagne;
                         }
-                    } else {
-                        
+                    } else if (egal()) {
+                        _stat = Status::Egalite;
+                    } else {                        
                         _tourRouge = !_tourRouge;
                         if (_tourRouge) {
                             _stat = Status::RougeJoue;

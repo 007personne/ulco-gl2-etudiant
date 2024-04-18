@@ -61,6 +61,30 @@ TEST_CASE("Test Issue 3") {
     REQUIRE(jeu.getStatus() == Status::RougeJoue);
     jeu.jouer(2, 2);
     REQUIRE(jeu.getStatus() == Status::VertJoue);
-    jeu.jouer(1, 2);
+    jeu.jouer(2, 1);
     REQUIRE(jeu.getStatus() == Status::VertGagne);
+}
+
+TEST_CASE("Test Issue 4") {
+    Jeu jeu;
+
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);
+    jeu.jouer(0, 0);
+    REQUIRE(jeu.getStatus() == Status::VertJoue);
+    jeu.jouer(1, 1);
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);
+    jeu.jouer(2, 0);
+    REQUIRE(jeu.getStatus() == Status::VertJoue);
+    jeu.jouer(1, 0);
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);
+    jeu.jouer(1, 2);
+    REQUIRE(jeu.getStatus() == Status::VertJoue);
+    jeu.jouer(2,2);
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);
+    jeu.jouer(2, 1);
+    REQUIRE(jeu.getStatus() == Status::VertJoue);
+    jeu.jouer(0, 2);
+    REQUIRE(jeu.getStatus() == Status::RougeJoue);
+    jeu.jouer(0, 1);
+    REQUIRE(jeu.getStatus() == Status::Egalite);
 }
